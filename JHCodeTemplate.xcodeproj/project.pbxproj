@@ -263,6 +263,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -431,6 +432,7 @@
 				INFOPLIST_FILE = JHCodeTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jchu.JHCodeTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -444,6 +446,7 @@
 				INFOPLIST_FILE = JHCodeTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jchu.JHCodeTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

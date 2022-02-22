@@ -81,8 +81,8 @@ static NSString *kSetConstraintsMethodName = @"setupViewConstraints";
     
     [result codeAppendReturn];
     
-    // @interface cell userdata --
-    [result codeAppendClassDeclareWithClassName:[NSString stringWithFormat:@"<$className$>UserData"] superName:@"NSObject"];
+    // @interface cell model --
+    [result codeAppendClassDeclareWithClassName:[NSString stringWithFormat:@"<$className$>Model"] superName:@"NSObject"];
     [result codeAppendReturn];
     
     // delegate
@@ -120,7 +120,7 @@ static NSString *kSetConstraintsMethodName = @"setupViewConstraints";
         [result codeAppendReturn];
     }
     
-    [result appendFormat:@"@property (nonatomic, strong) <$className$>UserData *userData;\n"];
+    [result appendFormat:@"@property (nonatomic, strong) <$className$>Model *model;\n"];
     
     [result codeAppendReturn];
     [result codeAppendAtEnd];
@@ -219,7 +219,7 @@ static NSString *kSetConstraintsMethodName = @"setupViewConstraints";
     [result codeAppendPragmaMark:@"JHCellConfig"];
     // shouldUpdate
     [result appendString:@"- (void)updateContentWithCellConfig:(JHCellConfig *)cellConfig\n{\n"];
-    [result appendString:@"self.userData = cellConfig.dataModel;"];
+    [result appendString:@"self.model = cellConfig.dataModel;"];
     [result codeAppendReturn];
     [result codeAppendReturn];
     [result codeAppendMethodEnd];
@@ -231,8 +231,8 @@ static NSString *kSetConstraintsMethodName = @"setupViewConstraints";
     
     // heightForObject
     
-    [result appendFormat:@"+ (CGFloat)cellHeightWithCellConfig:(JHCellConfig *)cellConfig\n{\nreturn %@;\n}\n\n", @"44"];
-    
+    [result appendFormat:@"+ (CGFloat)cellHeightWithCellConfig:(JHCellConfig *)cellConfig\n{\nreturn %@;\n}\n\n", self.dynamicHeight ?@"[cellConfig dynamicHeightCalResult]":@"44"];
+
     
     [result codeAppendPragmaMark:@"Public"];
     [result codeAppendPragmaMark:@"Private"];
@@ -265,8 +265,8 @@ static NSString *kSetConstraintsMethodName = @"setupViewConstraints";
     
     [result codeAppendReturn];
     
-    // userdata -
-    [result codeAppendClassImplementationWithClassName:[NSString stringWithFormat:@"<$className$>UserData"]];
+    // model -
+    [result codeAppendClassImplementationWithClassName:[NSString stringWithFormat:@"<$className$>Model"]];
     [result codeAppendReturn];
     [result codeAppendAtEnd];
     

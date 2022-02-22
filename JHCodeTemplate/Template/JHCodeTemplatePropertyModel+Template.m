@@ -63,7 +63,7 @@
 {
     if ([[self basicUIClassNameString] isEqualToString:@"UIButton"]) {
         
-        NSString *template = @"- (void)<$propertyName$>Action:(id)sender\n{\nif (self.userData.<$propertyName$>Block) {\nself.userData.<$propertyName$>Block(self.userData);\n}\n}\n";
+        NSString *template = @"- (void)<$propertyName$>Action:(id)sender\n{\nif (self.model.<$propertyName$>Block) {\nself.model.<$propertyName$>Block(self.model);\n}\n}\n";
         
         NSString *codeString =  [template composedStringWithElementArray:self.elementArray];
 
